@@ -1,26 +1,26 @@
 import streamlit as st
 
-# Page Layout & Configuration
+# 1. Page Layout & Configuration (Top par hona compulsory hai)
 st.set_page_config(
     page_title="Nepal Govt Services Hub",
-    page_icon="🇳🇵",
+    page_icon="https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg", # Clean official logo
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Native App Headers
+# 2. Native App Headers
 st.title("🇳🇵 Nepal Government Services Directory")
 st.write("### All 56 Official Utility Portals, Forms, and Tender Links in One Place.")
 st.write("---")
 
-# Sidebar Dashboard Info
+# 3. Sidebar Dashboard Info
 with st.sidebar:
     st.image("https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg", width=120)
     st.title("Project Controls")
     st.info("**Information Directory:** Yeh ek native navigation matrix hai. Kisi bhi form ko click karne par aap secure tarike se official `.gov.np` server par hi redirect honge.")
     st.warning("🔒 **Data Privacy Guarantee:** This application is serverless on the client-side. It does not store or intercept any PII, biometric data, or credentials.")
 
-# Complete 56 Portals Database Categorized Academically
+# 4. Complete 56 Portals Database Categorized Academically
 services_data = {
     "1. Identity, Citizenship & Vital Events (Pehchan aur Darta)": [
         {"name": "National ID (NID) Portal", "desc": "Rastriya Parichayapatra pre-enrollment & biometric schedule.", "url": "https://citizenportal.donidcr.gov.np"},
@@ -98,12 +98,12 @@ services_data = {
     ]
 }
 
-# Live Fuzzy Search Box
+# 5. Live Fuzzy Search Box
 search_query = st.text_input("🔍 Search exactly what you need (e.g., 'Tender', 'License', 'PAN', 'Kathmandu', 'PSC')...", "").strip().lower()
 
 found_any = False
 
-# Render Engine Using Crash-Free Components
+# 6. Render Engine Using Crash-Free Components
 for category, services in services_data.items():
     # Filter matrix by search token
     filtered_services = [s for s in services if search_query in s['name'].lower() or search_query in s['desc'].lower()]
