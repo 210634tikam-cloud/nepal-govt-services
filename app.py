@@ -29,6 +29,7 @@ st.markdown("""
         margin-top: 20px;
         margin-bottom: 15px;
         font-weight: bold;
+        font-size: 20px;
     }
     .service-box {
         background-color: #F3F4F6;
@@ -145,7 +146,8 @@ for category, services in services_data.items():
     
     if filtered_services:
         found_any = True
-        st.markdown(<div class='category-header'>{category}</div>, unsafe_allowed_html=True)
+        # Fixed line with proper formatting and string interpolation
+        st.markdown(f"<div class='category-header'>{category}</div>", unsafe_allowed_html=True)
         
         # Grid System: 3 Columns per row
         cols = st.columns(3)
