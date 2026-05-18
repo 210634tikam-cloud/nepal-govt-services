@@ -8,6 +8,14 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# 🔥 GOOGLE ADSENSE INTEGRATION (Meta Tag + Script Tag)
+# Yeh background me load hoga, user ko nahi dikhega par Google ka bot ise turant detect kar lega.
+st.components.v1.html("""
+    <meta name="google-adsense-account" content="ca-pub-5243992257022862">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5243992257022862" crossorigin="anonymous"></script>
+""", height=0)
+
 # 2. Native App Headers
 st.title("🇳🇵 Nepal Government Services Directory")
 st.write("### All 56 Official Utility Portals, Forms, and Tender Links in One Place.")
@@ -15,6 +23,12 @@ st.write("---")
 
 # 3. Sidebar Dashboard Info
 with st.sidebar:
+    # Sidebar me bhi script load karwa di for double-safety
+    st.components.v1.html("""
+        <meta name="google-adsense-account" content="ca-pub-5243992257022862">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5243992257022862" crossorigin="anonymous"></script>
+    """, height=0)
+    
     st.image("https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg", width=120)
     st.title("Project Controls")
     st.info("**Information Directory:** Yeh ek native navigation matrix hai. Kisi bhi form ko click karne par aap secure tarike se official `.gov.np` server par hi redirect honge.")
@@ -124,7 +138,6 @@ with tab1:
         st.error("❌ No official government portal matched your filter keyword.")
 
 with tab2:
-    # --- Privacy Policy & Terms Content for AdSense Approval ---
     st.header("🔒 Privacy Policy & Terms of Service")
     st.write("**Last Updated: May 2026**")
     st.write("""
@@ -139,7 +152,6 @@ with tab2:
     """)
 
 with tab3:
-    # --- About & Legal Disclaimer ---
     st.header("📝 About Project & Legal Disclaimer")
     st.write("""
     ### About The App
@@ -153,4 +165,4 @@ with tab3:
 
 # 4. Footer & Branding
 st.write("---")
-st.write("### 🛠️ Built by Tikam Sah")
+st.write("### 🛠️ Built by Tikam Sah ")
