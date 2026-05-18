@@ -8,67 +8,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for better styling and block design
-st.markdown("""
-    <style>
-    .main-title {
-        text-align: center;
-        color: #1E3A8A;
-        font-family: 'Helvetica Neue', sans-serif;
-        margin-bottom: 5px;
-    }
-    .sub-title {
-        text-align: center;
-        color: #555555;
-        margin-bottom: 30px;
-    }
-    .category-header {
-        color: #B91C1C;
-        border-bottom: 2px solid #B91C1C;
-        padding-bottom: 5px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-        font-weight: bold;
-        font-size: 20px;
-    }
-    .service-box {
-        background-color: #F3F4F6;
-        padding: 15px;
-        border-radius: 10px;
-        border-left: 5px solid #1E40AF;
-        margin-bottom: 15px;
-        min-height: 120px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .service-title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #1F2937;
-        margin-bottom: 5px;
-    }
-    .service-desc {
-        font-size: 13px;
-        color: #4B5563;
-        margin-bottom: 10px;
-    }
-    a.visit-btn {
-        background-color: #1E40AF;
-        color: white !important;
-        padding: 6px 12px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 13px;
-        border-radius: 5px;
-        font-weight: bold;
-    }
-    a.visit-btn:hover {
-        background-color: #1D4ED8;
-    }
-    </style>
-""", unsafe_allowed_html=True)
+# Custom CSS for better styling (Compressed to a single line string to avoid Python 3.14 multi-line bug)
+st.markdown("<style>.main-title {text-align: center; color: #1E3A8A; font-family: 'Helvetica Neue', sans-serif; margin-bottom: 5px;} .sub-title {text-align: center; color: #555555; margin-bottom: 30px;} .category-header {color: #B91C1C; border-bottom: 2px solid #B91C1C; padding-bottom: 5px; margin-top: 20px; margin-bottom: 15px; font-weight: bold; font-size: 20px;} .service-box {background-color: #F3F4F6; padding: 15px; border-radius: 10px; border-left: 5px solid #1E40AF; margin-bottom: 15px; min-height: 120px; display: flex; flex-direction: column; justify-content: space-between;} .service-title {font-size: 16px; font-weight: bold; color: #1F2937; margin-bottom: 5px;} .service-desc {font-size: 13px; color: #4B5563; margin-bottom: 10px;} a.visit-btn {background-color: #1E40AF; color: white !important; padding: 6px 12px; text-align: center; text-decoration: none; display: inline-block; font-size: 13px; border-radius: 5px; font-weight: bold;} a.visit-btn:hover {background-color: #1D4ED8;}</style>", unsafe_allowed_html=True)
 
 # App Headers
 st.markdown("<h1 class='main-title'>🇳🇵 Nepal Government Services Directory</h1>", unsafe_allowed_html=True)
@@ -146,7 +87,6 @@ for category, services in services_data.items():
     
     if filtered_services:
         found_any = True
-        # Fixed line with proper formatting and string interpolation
         st.markdown(f"<div class='category-header'>{category}</div>", unsafe_allowed_html=True)
         
         # Grid System: 3 Columns per row
