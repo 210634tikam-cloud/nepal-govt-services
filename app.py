@@ -3,7 +3,7 @@ import streamlit as st
 # 1. Page Layout & Configuration (Top par hona compulsory hai)
 st.set_page_config(
     page_title="Nepal Govt Services Hub",
-    page_icon="https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg", # Clean official logo
+    page_icon="https://cdn-icons-png.flaticon.com/512/5328/5328114.png", # High-quality universal PNG icon
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -130,4 +130,7 @@ for category, services in services_data.items():
 # Null State Matrix
 if not found_any:
     st.error("❌ No official government portal matched your specific filter keyword. Try searching 'Tender', 'PSC', or 'License'.")
- 
+
+# 7. Professional Footer Credit (No HTML to bypass Python 3.14 bug)
+st.write("---")
+st.write("### 🛠️ Built by Tikam Sah")
